@@ -1,0 +1,13 @@
+version: "3.3"
+services:
+    postgresql:
+        build:
+            context: ./go
+        ports: 
+            - "5432:5432"   
+        networks: 
+            - go-echo
+        restart: always
+networks: 
+    go-echo:
+        driver: bridge
